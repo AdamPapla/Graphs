@@ -2,7 +2,7 @@
 #include <string>
 #include <queue>
 #include <stack>
-#include "graph.hh"
+#include "AMGraph.hh"
 
 void AMGraph::addVertex(std::string vertex){
         if (vertexMap.find(vertex) != vertexMap.end()){}

@@ -1,7 +1,8 @@
 #include <iostream>
-#include "graph.hh"
+#include "AMGraph.hh"
+#include "ALGraph.hh"
 int main(){
-    AMGraph myGraph;
+    ALGraph myGraph;
     myGraph.addVertex("Ramelton");
     myGraph.addVertex("Milford");
     myGraph.addVertex("Letterkenny");
@@ -21,7 +22,6 @@ int main(){
     myGraph.addEdge("Munich", "Dublin");
     myGraph.addEdge("Amsterdam", "Dublin");
     myGraph.addEdge("Kentucky", "Wisconsin");
-    myGraph.addEdge("Amstedam", "Kentucky");
     std::cout << myGraph << std::endl;
     std::cout << "Are Ramelton and Delft connected (bfs): " << myGraph.bfs("Ramelton", "Delft") << std::endl;
     std::cout << "Are Ramelton and Delft connected (dfs): " << myGraph.bfs("Ramelton", "Delft") << std::endl;
