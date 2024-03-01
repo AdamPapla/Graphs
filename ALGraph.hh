@@ -7,7 +7,6 @@
 #include <algorithm>
 #include <iterator>
 #include <unordered_map>
-
 class ALGraph{
 public:
     ALGraph() : vertexCount {0} {
@@ -20,6 +19,7 @@ public:
     void addVertex(std::string vertex);
     void addEdge(std::string v1, std::string v2);
     std::vector<int> findConnections(std::string vertex);
+    std::vector<std::string> showConnections(std::string vertex);
     friend std::ostream& operator<<(std::ostream& os, const ALGraph g);
     bool bfs(std::string v1, std::string v2);
     bool dfs(std::string v1, std::string v2);

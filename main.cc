@@ -28,5 +28,10 @@ int main(){
     std::cout << std::endl;
     std::cout << "Are Milford and Kentucky connected (bfs): " << myGraph.bfs("Milford", "Kentucky") << std::endl;
     std::cout << "Are Milford and Kentucky connected (dfs): " << myGraph.bfs("Milford", "Kentucky") << std::endl;
+    std::cout << "Connections of Ramelton: " << std::endl;
+    std::vector<std::string> connections = myGraph.showConnections("Ramelton");
+    for (auto s : connections){
+        std::cout << "-\t" << s << std::endl; 
+    }
     return 0;
 }
