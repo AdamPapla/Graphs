@@ -5,7 +5,6 @@
 #include <queue>
 
 #include "ALGraph.hh"
-
 void ALGraph::addVertex(std::string vertex){
     if (vertexMap.find(vertex) != vertexMap.end()) {}
     else {
@@ -50,6 +49,22 @@ std::vector<int> ALGraph::findConnections(std::string vertex){
         return adjList[ind];
     }
     return std::vector<int> ();
+}
+
+std::vector<std::string> ALGraph::showConnections (std::string vertex) {
+    std::vector<std::string> connections;
+    auto p1 = vertexMap.find(vertex);
+    if (p1 == vertexMap.end()){}
+    else {
+        int ind = p1 -> second;
+        int numConnections = adjList[ind].size();
+        for (int i=0; i<numConnections; ++i){
+            int cIndex = adjList[ind][i];
+            std::string connection = indexMap.at(cIndex);
+            connections.push_back(connection);
+        }
+    }
+    return connections;
 }
 
 bool ALGraph::bfs(std::string v1, std::string v2){
